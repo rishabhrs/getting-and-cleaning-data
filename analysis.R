@@ -1,7 +1,7 @@
 # 1. Merge the training and the test sets to create one data set.
 
 #set working directory to the location where the UCI HAR Dataset was unzipped
-setwd('/Users/heather/Documents/UCI HAR Dataset/');
+setwd('./');
 
 # Read in the data from files
 features     = read.table('./features.txt',header=FALSE); #imports features.txt
@@ -91,4 +91,4 @@ tidyData    = aggregate(finalDataNoActivityType[,names(finalDataNoActivityType) 
 tidyData    = merge(tidyData,activityType,by='activityId',all.x=TRUE);
 
 # Export the tidyData set 
-write.table(tidyData, './tidyData.txt',row.names=TRUE,sep='\t');
+write.table(tidyData, './tidyData.txt',row.names=FALSE,sep='\t');
